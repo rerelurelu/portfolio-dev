@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-const SITE_NAME = 'zoniha';
+const SITE_NAME = 'site name';
 
 type Props = {
   title: string;

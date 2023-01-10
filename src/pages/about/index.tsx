@@ -6,14 +6,12 @@ import { ABOUT } from '@/const/seo';
 
 const links = [
   { href: 'https://github.com/zoniha', content: 'GitHub' },
-  { href: 'https://www.resume.id/zoniha', content: 'Resume' },
   { href: 'https://zenn.dev/astrologian', content: 'Zenn' },
 ] as const;
 
 const description = {
-  para1: `現在はSESエンジニアとして働いています。`,
-  para2: `将来的には、ユーザーからの意見も取り入れながらプロダクトを成長させていけるような環境で働き、
-    エンジニア視点だけでなくユーザー視点からもプロダクト開発が行えるエンジニアになりたいと考えています。`,
+  para1: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. `,
+  para2: `Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.`,
 } as const;
 
 const About: NextPage = () => {
@@ -22,10 +20,10 @@ const About: NextPage = () => {
       <div className='mt-24 grid place-items-center px-6 md:mt-36'>
         <div className='avatar'>
           <div className='h-48 w-48 rounded-full ring ring-secondary ring-offset-2 ring-offset-base-100'>
-            <img src='avatar.png' alt="zoniha's avatar image" />
+            <img src='avatar.png' alt="avatar image" />
           </div>
         </div>
-        <span className='mt-10 text-4xl'>zoniha</span>
+        <span className='mt-10 text-4xl'>name</span>
         <ul className='mt-6 flex list-none flex-wrap gap-4'>
           {links.map(({ href, content }) => {
             return (

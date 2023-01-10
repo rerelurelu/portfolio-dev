@@ -11,7 +11,7 @@ import { BlogPost, Posts, ZennPost } from '@/types/post';
 
 const description = {
   para1: `Welcome to my site!`,
-  para2: `I'm zoniha.`,
+  para2: `I'm xxxx.`,
   para3: `I live in Tokyo, Japan.`,
 } as const;
 

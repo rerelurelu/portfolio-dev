@@ -6,8 +6,8 @@ type SEO = {
 
 // Home page
 export const HOME: SEO = {
-  TITLE: `zoniha's playground`,
-  DESCRIPTION: `zoniha's personal website`,
+  TITLE: `my playground`,
+  DESCRIPTION: `personal website`,
 };
 
 // Authentication page
