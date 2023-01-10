@@ -48,10 +48,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const parser = new Parser();
   const feedZenn: ZennPost = await parser.parseURL(ZENN_FEED_URL);
 
-  const { data } = await client.query({
-    query: GET_RECENT_POSTS_QUERY,
-  });
-
   const posts: Posts = [];
 
   feedZenn.items.map((post: ZennPost) => {
@@ -63,18 +59,6 @@ export const getStaticProps: GetStaticProps = async () => {
       tags: ['zenn'],
     });
   });
-
-  data.posts.map((post: BlogPost) => {
-    posts.push({
-      key: post.id,
-      link: `/blog/${post.slug}`,
-      title: post.title,
-      createdAt: post.createdAt.slice(0, 10),
-      tags: ['myself'],
-    });
-  });
-
-  posts.sort((x, y) => (x.createdAt > y.createdAt ? -1 : 1));
 
   return {
     props: {

@@ -45,29 +45,3 @@ const Blog: NextPage<any> = ({ post }) => {
 };
 
 export default Blog;
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { data } = await client.query({
-    query: GET_POSTS_QUERY,
-  });
-  const paths = data.posts.map((post: BlogPost) => `/blog/${post.slug}`);
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const { data } = await client.query({
-    query: GET_POST_QUERY,
-    variables: {
-      slug: params.post,
-    },
-  });
-
-  return {
-    props: {
-      post: data.posts[0],
-    },
-  };
-};
