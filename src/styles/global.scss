@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$font-color-code: #d4d9dc;
+$bg-color-code-area: #4567a2;
+$border-color: #b2ebf24d;
+
+@layer components {
+  .nav-underline {
+    @apply absolute;
+    @apply -bottom-2;
+    @apply left-0;
+    @apply h-1;
+    background: linear-gradient(to right, #00f1f9, #cb33f4);
+    content: '';
+    transition: all .3s;
+  }
+}
+
+@layer components {
+  .markdown {
+    @apply w-full;
+    font-weight: 300;
+
+    &h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mt-8;
+    }
+
+    h1,
+    h2 {
+      @apply mb-2;
+      @apply py-2;
+      font-weight: bold;
+      border-bottom: 0.0625rem solid $border-color;
+    }
+
+    h1 {
+      @apply text-3xl;
+    }
+
+    h2 {
+      @apply text-2xl;
+    }
+
+    h3 {
+      &::before {
+        @apply mr-2;
+        content: '#';
+      }
+    }
+
+    h4 {
+      &::before {
+        @apply mr-2;
+        content: '##';
+      }
+    }
+
+    h5 {
+      &::before {
+        @apply mr-2;
+        content: '###';
+      }
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-xl;
+      @apply mb-3;
+      font-weight: 400;
+    }
+
+    a {
+      @apply text-fuchsia-400;
+      @apply mx-px;
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 90%;
+      @apply mx-auto;
+      @apply my-16;
+      @apply rounded-lg
+    }
+
+    ul {
+      @apply ml-7;
+      @apply mb-8;
+      @apply list-disc;
+
+      li {
+        @apply mx-0;
+        @apply opacity-70;
+        font-size: 16px;
+      }
+    }
+
+    hr {
+      @apply my-8;
+      @apply h-px;
+      @apply border-none;
+      background-color: $border-color;
+    }
+
+    p {
+      @apply mb-8;
+      @apply opacity-70;
+      font-size: 16px;
+    }
+
+    p,
+    ul {
+      code {
+        @apply px-2;
+        @apply py-1;
+        @apply mx-1;
+        @apply rounded;
+        @apply antialiased;
+        font-size: 0.9rem;
+        background-color: #2b3047;
+        color: #f2f4ffcc;
+      }
+
+    }
+
+    pre {
+      @apply mockup-code;
+      @apply my-12;
+      @apply px-4;
+      background-color: #2b3047;
+      color: #f2f4ffcc;
+
+      code {
+        @apply py-4;
+        font-size: 1rem;
+      }
+    }
+  }
+}
